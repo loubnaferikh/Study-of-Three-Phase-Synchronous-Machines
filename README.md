@@ -1,4 +1,5 @@
 # Study of Three-Phase Synchronous Machines
+# https://study-of-synchronous-machine.netlify.app
 <div style="font-size: 0.85rem; line-height: 1.5;">
 
 <div align="center">
