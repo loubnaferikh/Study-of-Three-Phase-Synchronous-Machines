@@ -1,4 +1,5 @@
 # Étude des Machines Synchrones Triphasées
+<div style="font-size: 0.85rem; line-height: 1.5;">
 
 <div align="center">
 
@@ -80,49 +81,49 @@ The application models the following electrical system components:
 ```
 ┌─────────────────────────────────────────────────────────┐
 │                    Physical System                      │
-│  ┌──────────────┐      ┌──────────────┐               │
-│  │  Synchronous │      │  Test        │               │
-│  │  Machine     │◄─────┤  Equipment   │               │
-│  └──────────────┘      └──────────────┘               │
-│         │                                              │
-│         │ Experimental Data                            │
-│         ▼                                              │
+│  ┌──────────────┐      ┌──────────────┐                 │
+│  │  Synchronous │      │  Test        │                 │
+│  │  Machine     │◄─────┤  Equipment   │                 │
+│  └──────────────┘      └──────────────┘                 │
+│         │                                               │
+│         │ Experimental Data                             │
+│         ▼                                               │
 └─────────────────────────────────────────────────────────┘
                     │
                     │ User Input
                     ▼
 ┌─────────────────────────────────────────────────────────┐
 │                  Web Application                        │
-│  ┌──────────────┐      ┌──────────────┐               │
-│  │  Data Input  │─────►│  Calculation │               │
-│  │  Interface   │      │  Engine      │               │
-│  └──────────────┘      └──────────────┘               │
+│  ┌──────────────┐      ┌──────────────┐                 │
+│  │  Data Input  │─────►│  Calculation │                 │
+│  │  Interface   │      │  Engine      │                 │
+│  └──────────────┘      └──────────────┘                 │
 │         │                      │                        │
 │         │                      │                        │
 │         ▼                      ▼                        │
-│  ┌──────────────┐      ┌──────────────┐               │
-│  │  Validation  │      │  Visualization│              │
-│  │  & Error     │      │  & Animation  │              │
-│  │  Handling    │      │  Engine       │              │
-│  └──────────────┘      └──────────────┘               │
+│  ┌──────────────┐      ┌──────────────┐                 │
+│  │  Validation  │      │ Visualization│                 │
+│  │  & Error     │      │ & Animation  │                 │
+│  │  Handling    │      │ Engine       │                 │
+│  └──────────────┘      └──────────────┘                 │
 │         │                      │                        │
 │         └──────────┬───────────┘                        │
-│                   │                                     │
-│                   ▼                                     │
-│         ┌──────────────────┐                          │
-│         │  Results Display │                          │
-│         └──────────────────┘                          │
+│                    │                                    │
+│                    ▼                                    │
+│         ┌──────────────────┐                            │
+│         │  Results Display │                            │
+│         └──────────────────┘                            │
 └─────────────────────────────────────────────────────────┘
                     │
                     │ Calculated Parameters
                     ▼
 ┌─────────────────────────────────────────────────────────┐
-│              Electrical Parameters                       │
-│  • Excitation Current (J)                                │
-│  • Internal EMF (E)                                      │
-│  • Load Angle (δ)                                        │
+│              Electrical Parameters                      │
+│  • Excitation Current (J)                               │
+│  • Internal EMF (E)                                     │
+│  • Load Angle (δ)                                       │
 │  • Reactances (Xs, Xt, Xl, λ)                           │
-│  • Power Factor                                          │
+│  • Power Factor                                         │
 └─────────────────────────────────────────────────────────┘
 ```
 
@@ -228,26 +229,26 @@ The application models the following electrical system components:
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                    User Interface Layer                     │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
-│  │   Home Page  │  │ Selection    │  │ Input Forms  │    │
-│  │   (Landing)  │  │ Page         │  │ & Tables     │    │
-│  └──────────────┘  └──────────────┘  └──────────────┘    │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐       │
+│  │   Home Page  │  │ Selection    │  │ Input Forms  │       │
+│  │   (Landing)  │  │ Page         │  │ & Tables     │       │
+│  └──────────────┘  └──────────────┘  └──────────────┘       │
 └─────────────────────────────────────────────────────────────┘
                             │
                             ▼
 ┌─────────────────────────────────────────────────────────────┐
 │                    Presentation Layer                       │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
-│  │   CSS Styles │  │  Animations  │  │  Responsive  │    │
-│  │   & Layouts  │  │  & Effects   │  │  Design      │    │
-│  └──────────────┘  └──────────────┘  └──────────────┘    │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐       │
+│  │   CSS Styles │  │  Animations  │  │  Responsive  │       │
+│  │   & Layouts  │  │  & Effects   │  │  Design      │       │
+│  └──────────────┘  └──────────────┘  └──────────────┘       │
 └─────────────────────────────────────────────────────────────┘
                             │
                             ▼
-┌─────────────────────────────────────────────────────────────┐
-│                    Application Logic Layer                  │
+┌────────────────────────────────────────────────────────────┐
+│                    Application Logic Layer                 │
 │  ┌──────────────────────────────────────────────────────┐  │
-│  │           jsPoleLisse.js                            │  │
+│  │           jsPoleLisse.js                             │  │
 │  │  • computePotier()                                   │  │
 │  │  • computeBehnEschenburg()                           │  │
 │  │  • drawPotierDiagramCorrect()                        │  │
@@ -255,22 +256,22 @@ The application models the following electrical system components:
 │  │  • calculerCourantExcitationJLisse()                 │  │
 │  └──────────────────────────────────────────────────────┘  │
 │  ┌──────────────────────────────────────────────────────┐  │
-│  │           jsPoleSaillant.js                         │  │
+│  │           jsPoleSaillant.js                          │  │
 │  │  • calculerAlphaLambdaSaillant()                     │  │
-│  │  • calculerXtXlSaillant()                           │  │
+│  │  • calculerXtXlSaillant()                            │  │
 │  │  • tracerDiagrammeBlondelSaillant()                  │  │
-│  │  • tracerDiagrammeKAPPSaillant()                    │  │
-│  │  • calculerCourantExcitationJSaillant()             │  │
+│  │  • tracerDiagrammeKAPPSaillant()                     │  │
+│  │  • calculerCourantExcitationJSaillant()              │  │
 │  └──────────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────────┘
+└────────────────────────────────────────────────────────────┘
                             │
                             ▼
 ┌─────────────────────────────────────────────────────────────┐
 │                    Rendering Layer                          │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
-│  │  Canvas API  │  │  Vector      │  │  Animation    │    │
-│  │  Rendering   │  │  Drawing     │  │  Controller   │    │
-│  └──────────────┘  └──────────────┘  └──────────────┘    │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐       │
+│  │  Canvas API  │  │  Vector      │  │  Animation    │      │
+│  │  Rendering   │  │  Drawing     │  │  Controller   │      │
+│  └──────────────┘  └──────────────┘  └──────────────┘       │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -287,181 +288,9 @@ The application models the following electrical system components:
 - Validation and error handling
 
 **Rendering Layer**: Canvas API for vector diagram visualization with animation support
-
----
-
-## Installation & Setup
-
-### Prerequisites
-
-- Modern web browser (Chrome 90+, Firefox 88+, Edge 90+, Safari 14+)
-- JavaScript enabled
-- Internet connection (only for initial font/icon loading)
-
-### Installation Steps
-
-1. **Download the Project**
-   ```bash
-   # Clone or download the repository
-   git clone [repository-url]
-   cd "Mini Projet ME3_ Sujet 04"
-   ```
-
-2. **Open the Application**
-   
-   **Option 1: Direct Opening**
-   - Navigate to the project folder
-   - Double-click `style.html`
-   - The application opens in your default browser
-
-   **Option 2: Local Server (Recommended)**
-   ```bash
-   # Using Python 3
-   python -m http.server 8000
-   
-   # Using Node.js (if http-server is installed)
-   npx http-server -p 8000
-   
-   # Access at http://localhost:8000/style.html
-   ```
-
-3. **Verify Installation**
-   - Application loads without errors
-   - All pages are accessible
-   - Forms are functional
-   - No console errors
-
-### File Structure
-
 ```
-Mini Projet ME3_ Sujet 04/
-│
-├── style.html                 # Main HTML file (entry point)
-├── style (1).css             # Complete CSS stylesheet
-├── jsPoleLisse.js            # Smooth-pole machine module
-├── jsPoleSaillant.js         # Salient-pole machine module
-├── Logo-ENP.png              # Institution logo
-└── README_ME3_Sujet04.md     # Project documentation
 ```
 
----
-
-## Usage Instructions
-
-### Quick Start
-
-1. Open `style.html` in a web browser
-2. Click **"Commencer l'étude"** (Start Study)
-3. Select machine type: **Pôle Lisse** (Smooth Pole) or **Pôle Saillant** (Salient Pole)
-4. Fill in the required parameters
-5. Generate the diagram
-6. View results and calculate excitation current
-
-### Detailed Workflow
-
-#### Step 1: Machine Selection
-- Choose between smooth-pole or salient-pole machine
-- Each type has different analysis methods available
-
-#### Step 2: Machine Parameters
-Enter the following information:
-
-**Basic Machine Parameters**
-- Machine type: Single-phase or Three-phase
-- Connection: Star (Y) or Delta (Δ) for three-phase
-- Stator resistance Rs (Ω) or calculate from Req
-- Frequency (Hz)
-- Number of pole pairs
-
-**Operating Conditions**
-- Terminal voltage V (V)
-- Armature current I (A)
-- Power factor cos(φ)
-- Load type: Inductive, Capacitive, or Resistive
-- Operating mode: Generator or Motor
-
-#### Step 3: Test Data Input
-
-**Open-Circuit Test Data** (E = f(J))
-- Minimum 4 points required for Potier method
-- Enter pairs of values: Excitation current J (A) and Open-circuit voltage E (V)
-- Data should be sorted by increasing J values
-
-**Short-Circuit Test Data** (Icc = f(J))
-- Minimum 1 point required
-- Enter pairs: Excitation current J (A) and Short-circuit current Icc (A)
-
-**Additional Tests**
-- **Dewatté Test** (for Potier method): Vd, Id, Jd, cos(φ)
-- **Slip Test** (for salient poles): Imax, Imin at rated voltage
-
-#### Step 4: Generate Diagram
-- Click the button for desired analysis method
-- Watch the animated construction
-- Review calculated parameters
-
-#### Step 5: Calculate Excitation Current
-- Click **"Calculer le courant d'excitation J"**
-- Review detailed calculation steps
-- Note the final excitation current value
-
----
-
-## Results & Expected Outcomes
-
-### Calculated Parameters
-
-The application provides the following calculated outputs:
-
-#### For Smooth-Pole Machines
-
-**Behn-Eschenburg Method:**
-- Internal EMF (E) in volts
-- Load angle (δ) in degrees
-- Synchronous reactance (Xs) in ohms
-- Excitation current (J) in amperes
-- Voltage regulation percentage
-
-**Potier Method:**
-- Potier coefficient (α)
-- Potier reactance (λ) in ohms
-- Reaction EMF (Er) in volts
-- Excitation current (J) in amperes
-- Phase angle (φ) in degrees
-
-#### For Salient-Pole Machines
-
-**Blondel Method:**
-- Transverse EMF component (Etr) in volts
-- Longitudinal EMF component (Elr) in volts
-- Total EMF (E) in volts
-- Angle ψ between current and EMF in degrees
-- Excitation current (J) in amperes
-
-**KAPP Method:**
-- Direct-axis reactance (Xl) in ohms
-- Quadrature-axis reactance (Xt) in ohms
-- Load angle (δ) in degrees
-- Direct current component (Id) in amperes
-- Quadrature current component (Iq) in amperes
-- Active power (P) in watts
-- Reactive power (Q) in VAR
-- Excitation current (J) in amperes
-
-### Expected Accuracy
-
-- **Calculation Precision**: Results accurate to 2-4 decimal places depending on parameter
-- **Interpolation Accuracy**: Linear interpolation provides good accuracy for typical test data
-- **Validation**: All inputs validated before calculation to prevent errors
-
-### Use Cases
-
-1. **Educational**: Students learning synchronous machine analysis
-2. **Design**: Engineers calculating excitation requirements
-3. **Verification**: Cross-checking manual calculations
-4. **Research**: Analyzing different machine configurations
-
----
 
 ## Authors
 
@@ -469,8 +298,8 @@ The application provides the following calculated outputs:
 
 | Name | Role | Email | Contributions |
 |------|------|-------|---------------|
-| **Loubna FERIKH** | Lead Developer | loubna.ferikh@g.enp.edu.dz | Frontend development, smooth-pole module implementation |
-| **Chahrazed MERIDED** | Lead Developer | chahrazed.merided@g.enp.edu.dz | Frontend development, salient-pole module implementation |
+| **Loubna FERIKH** | Developer | loubna.ferikh@g.enp.edu.dz | Frontend development, smooth-pole module implementation |
+| **Chahrazed MERIDED** | Developer | chahrazed.merided@g.enp.edu.dz | Frontend development, salient-pole module implementation |
 
 
 ### Project Information
@@ -526,4 +355,5 @@ This software is provided "as is" without warranty of any kind. The authors and 
 
 
 
+</div>
 </div>
